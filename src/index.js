@@ -1,17 +1,34 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom/client";
+// import "./index.css";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
+// const div = document.createElement("div");
+
+const root = document.getElementById("root");
+// root.append(div);
+
+// const paragraph = React.createElement("p", {
+//   id: "test-P-ID",
+//   children: ["I am P"],
+// });
+
+const p = <p id="test-ID">I am P</p>;
+
+// const div = React.createElement("div", {
+//   name: "main",
+//   id: "test-ID",
+//   className: "test-class",
+//   children: p,
+// });
+
+const div = (
+  <div name="main" id="test" className="test-class">
+    {p}
+  </div>
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+console.log(div);
+ReactDOM.createRoot(root).render(div);
+
+// const root = ReactDOM.createRoot(document.getElementById("root"));
+// root.render(<React.StrictMode></React.StrictMode>);
