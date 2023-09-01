@@ -18,7 +18,7 @@ const root = document.getElementById("root");
 // const div = React.createElement("div", {
 //   name: "main",
 //   id: "test-ID",
-//   className: "test-class",
+//   className: "test-className",
 //   children: p,
 // });
 
@@ -30,21 +30,29 @@ const root = document.getElementById("root");
 
 // console.log(div);
 
-const card = (
-  <div class="card" style={{ width: "18rem" }}>
-    <img src={data[0].url} class="card-img-top" alt={data[0].title} />
-    <div class="card-body">
-      <h5 class="card-title">{data[0].title}</h5>
-      <p class="card-text">
-        Some quick example text to build on the card title and make up the bulk
-        of the card's content.
-      </p>
-      <a href="http" class="btn btn-primary">
-        Go somewhere
-      </a>
+const card = data.map((photo) => {
+  return (
+    <div
+      key={photo.id}
+      className="card mx-auto my-2"
+      style={{ width: "18rem" }}
+    >
+      <img src={photo.url} className="card-img-top" alt={photo.title} />
+      <div className="card-body">
+        <h5 className="card-title">Card title: {photo.title}</h5>
+        <p className="card-text">
+          Some quick example text to build on the card title and make up the
+          bulk of the card's content.
+        </p>
+        <a href="http" className="btn btn-primary">
+          Go somewhere
+        </a>
+      </div>
     </div>
-  </div>
-);
+  );
+});
+
+console.log(card);
 
 ReactDOM.createRoot(root).render(card);
 
