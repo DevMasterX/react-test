@@ -1,5 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
+import data from "./data.json";
 // import "./index.css";
 
 // const div = document.createElement("div");
