@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import data from "./data.json";
+import { Card } from "./components/Card";
+
 // import "./index.css";
 
 // const div = document.createElement("div");
@@ -30,31 +31,9 @@ const root = document.getElementById("root");
 
 // console.log(div);
 
-const card = data.map((photo) => {
-  return (
-    <div
-      key={photo.id}
-      className="card mx-auto my-2"
-      style={{ width: "18rem" }}
-    >
-      <img src={photo.url} className="card-img-top" alt={photo.title} />
-      <div className="card-body">
-        <h5 className="card-title">Card title: {photo.title}</h5>
-        <p className="card-text">
-          Some quick example text to build on the card title and make up the
-          bulk of the card's content.
-        </p>
-        <a href="http" className="btn btn-primary">
-          Go somewhere
-        </a>
-      </div>
-    </div>
-  );
-});
+// console.log(Card);
 
-console.log(card);
-
-ReactDOM.createRoot(root).render(card);
+ReactDOM.createRoot(root).render(<Card />);
 
 // const root = ReactDOM.createRoot(document.getElementById("root"));
 // root.render(<React.StrictMode></React.StrictMode>);
