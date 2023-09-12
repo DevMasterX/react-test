@@ -8,7 +8,7 @@ const App = () => {
       <Header />
       <Content />
       <h1>Состояние компонента</h1>
-      <Counter />
+      <Counter initialValue={10} />
     </>
   );
 };

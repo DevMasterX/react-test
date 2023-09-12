@@ -1,40 +1,46 @@
 import React from "react";
+import Controls from "./Controls";
+import Value from "./Value";
 
 class Counter extends React.Component {
-  constructor() {
-    super();
-    this.state = {
-      value: 5,
-    };
-  }
-
-  handleIncrement = (event) => {
-    console.log("Кликнули в увеличить");
-
-    const { target } = event;
-
-    setTimeout(() => {
-      console.log(target);
-    }, 1000);
+  static defaultProps = {
+    initialValue: 0,
   };
 
-  handleDecrement = (event) => {
-    console.log("Кликнули в уменьшить");
-    console.log(event);
+  state = {
+    value: this.props.initialValue,
+  };
+
+  handleIncrement = () => {
+    this.setState((prevState) => {
+      return { value: prevState.value + 1 };
+    });
+  };
+
+  handleDecrement = () => {
+    this.setState((prevState) => {
+      return { value: prevState.value - 1 };
+    });
   };
 
   render() {
     return (
       <div className="Counter">
-        <span className="Counter__value">{this.state.value}</span>
-        <div className="Counter__controls">
+        {/* <span className="Counter__value">{this.state.value}</span> */}
+        <Value value={this.state.value} />
+        <Controls
+          onIncrement={this.handleIncrement}
+          onDecrement={this.handleDecrement}
+        />
+
+        {/* <div className="Counter__controls">
           <button type="button" onClick={this.handleIncrement}>
             Увеличить на 1
           </button>
           <button type="button " onClick={this.handleDecrement}>
             Уменьшить на 1
           </button>
-        </div>
+        </div> */}
       </div>
     );
   }
