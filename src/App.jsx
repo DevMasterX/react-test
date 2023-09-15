@@ -6,6 +6,7 @@ import { Component } from "react";
 // import Dropdown from "./components/Dropdown/Dropdown";
 import TodoList from "./components/TodoList";
 import initialTodos from "./todos.json";
+import Counter1 from "./components/Counter1/Counter1";
 
 // const colorPickerOptions = [
 //   { label: "red", color: "#f44336" },
@@ -51,6 +52,7 @@ class App extends Component {
         </div>
 
         <TodoList todos={todos} onDeleteTodo={this.deleteTodo} />
+        <Counter1 />
       </>
     );
   }
