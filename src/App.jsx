@@ -8,14 +8,6 @@ import TodoList from "./components/TodoList";
 import initialTodos from "./todos.json";
 import Counter1 from "./components/Counter1/Counter1";
 
-// const colorPickerOptions = [
-//   { label: "red", color: "#f44336" },
-//   { label: "green", color: "#00fd0d" },
-//   { label: "blue", color: "#4202f0" },
-//   { label: "grey", color: "#656565" },
-//   { label: "pink", color: "#f90eca" },
-//   { label: "indigo", color: "#3f51b5" },
-// ];
 
 class App extends Component {
   state = {
