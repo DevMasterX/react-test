@@ -1,7 +1,7 @@
 import  { Component } from "react";
 
 
-class Counter1 extends Component {
+class Counter extends Component {
 state={counter:0}
 
 handleClickIncrement =() => {
@@ -68,4 +68,4 @@ return(
 //   );
 // };
 
-export default Counter1;
+export default Counter;

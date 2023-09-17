@@ -1,53 +1,30 @@
-// import Header from "./components/Header/Header";
-// import Content from "./components/Content";
-// import Counter from "./components/Counter/Counter";
-import { Component } from "react";
-// import ColorPicker from "./components/ColorPicker";
-// import Dropdown from "./components/Dropdown/Dropdown";
-import TodoList from "./components/TodoList";
-import initialTodos from "./todos.json";
-import Counter1 from "./components/Counter1/Counter1";
-
+import { Component } from 'react'
+import Counter from './components/Counter/Counter'
+import Header from './components/Header/Header'
+import Modal from './components/Modal/Modal'
+import TodoList from './components/TodoList'
 
 class App extends Component {
-  state = {
-    todos: initialTodos,
-  };
+	state = { isShowModal: false }
+  
 
-  deleteTodo = (todoId) => {
-    this.setState((prevState) => ({
-      todos: prevState.todos.filter((todo) => todo.id !== todoId),
-    }));
-  };
 
-  render() {
-    const { todos } = this.state;
+	toggleModal = () => {
+		this.setState((prev) => ({ isShowModal: !prev.isShowModal }))
+	}
 
-    const totalTodoCount = todos.length;
-    const completedTodosCount = todos.reduce(
-      (total, todo) => (todo.completed ? total + 1 : total),
-      0
-    );
-
-    return (
-      <>
-        {/* <Header />
-      <Content />
-      <h1>Состояние компонента</h1>
-      <Counter initialValue={10} /> */}
-        {/* <Dropdown /> */}
-        {/* <ColorPicker options={colorPickerOptions} /> */}
-
-        <div>
-          <p>Общее кол-во: {totalTodoCount}</p>
-          <p>Кол-во выполненных: {completedTodosCount}</p>
-        </div>
-
-        <TodoList todos={todos} onDeleteTodo={this.deleteTodo} />
-        <Counter1 />
-      </>
-    );
-  }
+	render() {
+		return (
+			<>
+				<Header toggleModal={this.toggleModal} />
+				<Counter />
+				<TodoList />
+				{this.state.isShowModal && (
+					<Modal toggleModal={this.toggleModal}>Text for Modal</Modal>
+				)}
+			</>
+		)
+	}
 }
 
 export default App;
