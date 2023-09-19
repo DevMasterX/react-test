@@ -1,5 +1,5 @@
 import { Component } from 'react'
-import Counter from './components/Counter/Counter'
+
 import Header from './components/Header/Header'
 import Modal from './components/Modal/Modal'
 import TodoList from './components/TodoList'
@@ -17,7 +17,6 @@ class App extends Component {
 		return (
 			<>
 				<Header toggleModal={this.toggleModal} />
-				<Counter />
 				<TodoList />
 				{this.state.isShowModal && (
 					<Modal toggleModal={this.toggleModal}>Text for Modal</Modal>
